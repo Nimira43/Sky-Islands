@@ -7,6 +7,7 @@ class Game:
     
     pygame.display.set_caption('Sky Islands')
     self.screen = pygame.display.set_mode((640, 480))
+    self.clock = pygame.time.Clock()
     
     self.player = PhysicsEntity(self, 'player', (50, 50), (8, 15))
 
