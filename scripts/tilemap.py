@@ -15,7 +15,7 @@ class Tilemap:
       surf.blit(self.game.assets[tile['type']][tile['variant']], (tile['pos'][0] * self.tile_size, tile['pos'][1] * self.tile_size))
                 
     for tile in self.offgrid_tiles:
-    surf.blit(self.game.assets[tile['type']][tile['variant']], tile['pos'])
+      surf.blit(self.game.assets[tile['type']][tile['variant']], tile['pos'])
     
 
     
