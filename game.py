@@ -8,6 +8,9 @@ class Game:
     
     pygame.display.set_caption('Sky Islands')
     self.screen = pygame.display.set_mode((640, 480))
+    self.display = pygame.Surface((320, 240))
+
+
     self.clock = pygame.time.Clock()
 
     self.movement = [False, False]
@@ -20,10 +23,10 @@ class Game:
 
   def run(self):
     while True:
-      self.screen.fill((14, 219, 248))
+      self.display.fill((14, 219, 248))
       
       self.player.update((self.movement[1] - self.movement[0], 0))
-      self.player.render(self.screen)
+      self.player.render(self.display)
 
       for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -40,6 +43,7 @@ class Game:
           if event.key == pygame.K_RIGHT:
             self.movement[1] = False
 
+      self.screen.blit(self.display, (0, 0))
       pygame.display.update()
       self.clock.tick(60)
 
