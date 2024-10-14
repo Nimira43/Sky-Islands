@@ -24,9 +24,6 @@ class Game:
     self.player = PhysicsEntity(self, 'player', (50, 50), (8, 15))
     self.player.render(self.screen)
 
-    print(self.assets)
-
-
   def run(self):
     while True:
       self.display.fill((14, 219, 248))
